@@ -1,0 +1,644 @@
+:root {
+    --primary-color: #0066cc;
+    --secondary-color: #aaceaa;
+    --light-blue: #e6f2ff;
+    --light-green: #e6ffe6;
+    --dark-blue: #004d99;
+    --dark-green: #008000;
+    --white: #ffffff;
+    --gray: #f5f5f5;
+    --dark-gray: #333333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--gray);
+}
+
+/* Login/Signup Page Styles */
+.security-container {
+    display: flex;
+    min-height: 100vh;
+    background-image: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+.security-form-container {
+    width: 400px;
+    margin: auto;
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.security-logo {
+    text-align: center;
+    margin-bottom: 20px;:root {
+        --primary-color: #0066cc;
+        --secondary-color: #00b300;
+        --light-blue: #e6f2ff;
+        --light-green: #e6ffe6;
+        --dark-blue: #004d99;
+        --dark-green: #008000;
+        --white: #ffffff;
+        --gray: #f5f5f5;
+        --dark-gray: #333333;
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+        background-color: var(--gray);
+    }
+    
+    .security-container {
+        display: flex;
+        min-height: 100vh;
+        background-image: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    }
+    
+    .security-form-container {
+        width: 400px;
+        margin: auto;
+        background-color: var(--white);
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .btn {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+    
+    .btn:hover {
+        background-color: var(--dark-blue);
+    }
+    
+    .dashboard-container {
+        display: none;
+    }
+    
+    .sidebar {
+        width: 250px;
+        background-color: var(--white);
+        border-right: 1px solid #eee;
+        height: 100vh;
+        position: fixed;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+    }
+    
+    .main-content {
+        flex: 1;
+        margin-left: 250px;
+        padding: 20px;
+    }
+    
+    @media (max-width: 768px) {
+        .security-form-container {
+            width: 90%;
+        }
+        .dashboard-content {
+            flex-direction: column;
+        }
+    }
+    
+}
+
+.security-logo img {
+    height: 60px;
+}
+
+.security-tabs {
+    display: flex;
+    margin-bottom: px;
+}
+
+.security-tab {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 2px solid var(--gray);
+    transition: all 0.3s ease;
+}
+
+.security-tab.active {
+    border-bottom: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.security-form {
+    margin-top: 0px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--dark-gray);
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 45px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--dark-blue);
+}
+
+.security-footer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: var(--dark-gray);
+}
+
+.security-footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* Dashboard Layout Styles */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: var(--white);
+    border-right: 1px solid #eee;
+    height: 100vh;
+    position: fixed;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.main-content {
+    flex: 1;
+    margin-left: 250px;
+    padding: 20px;
+}
+
+.sidebar-header {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+
+.sidebar-header img {
+    height: 40px;
+}
+
+.sidebar-menu {
+    padding: 20px 0;
+}
+
+.menu-item {
+    padding: 12px 25px;
+    display: flex;
+    align-items: center;
+    color: var(--dark-gray);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-bottom: 5px;
+}
+
+.menu-item i {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.menu-item:hover {
+    background-color: var(--light-blue);
+    color: var(--primary-color);
+}
+
+.menu-item.active {
+    background-color: var(--light-blue);
+    color: var(--primary-color);
+    border-left: 4px solid var(--primary-color);
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.dashboard-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--dark-gray);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--light-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+.user-name {
+    font-weight: 500;
+}
+
+/* Dashboard Content Styles */
+.dashboard-content {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+}
+
+.card {
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    margin: 10px;
+}
+
+.sensor-card {
+    flex: 1;
+    min-width: 250px;
+}
+
+.sensor-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.sensor-title {
+    font-size: 16px;
+    color: var(--dark-gray);
+    font-weight: 600;
+}
+
+.sensor-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.ec-icon {
+    background-color: var(--light-blue);
+    color: var(--primary-color);
+}
+
+.tds-icon {
+    background-color: var(--light-green);
+    color: var(--secondary-color);
+}
+
+.temp-icon {
+    background-color: #ffe6e6;
+    color: #cc0000;
+}
+
+.ph-icon {
+    background-color: #fff2e6;
+    color: #ff8000;
+}
+
+.sensor-value {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+.sensor-unit {
+    font-size: 16px;
+    color: #777;
+}
+
+.sensor-status {
+    font-size: 14px;
+    margin-top: 10px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.status-normal {
+    background-color: var(--light-green);
+    color: var(--dark-green);
+}
+
+.status-warning {
+    background-color: #fff9e6;
+    color: #cc8800;
+}
+
+.status-danger {
+    background-color: #ffe6e6;
+    color: #cc0000;
+}
+
+.chart-card {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.chart-container {
+    margin-top: 20px;
+    height: 300px;
+    background-color: var(--white);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    border: 1px dashed #ddd;
+}
+
+/* Water Quality Data Page Styles */
+.tabs {
+    display: flex;
+    margin-bottom: 20px;
+    background-color: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.tab {
+    flex: 1;
+    text-align: center;
+    padding: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+}
+
+.tab.active {
+    background-color: var(--light-blue);
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.history-filters {
+    display: flex;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.filter-item {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.filter-select {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: var(--white);
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background-color: var(--light-blue);
+    color: var(--dark-blue);
+    font-weight: 600;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* Settings Page Styles */
+.settings-card {
+    width: 100%;
+}
+
+.export-options {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.export-option {
+    margin-right: 20px;
+    margin-bottom: 15px;
+    background-color: var(--white);
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.export-option:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.export-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-size: 24px;
+}
+
+.export-pdf {
+    background-color: #ffe6e6;
+    color: #cc0000;
+}
+
+.export-excel {
+    background-color: var(--light-green);
+    color: var(--dark-green);
+}
+
+.export-access {
+    background-color: #e6e6ff;
+    color: #3333cc;
+}
+
+.export-info {
+    flex: 1;
+}
+
+.export-title {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.export-desc {
+    font-size: 14px;
+    color: #777;
+}
+
+.date-range {
+    margin: 20px 0;
+}
+
+.date-inputs {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.date-input {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.date-input label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: var(--dark-gray);
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .sidebar {
+        width: 70px;
+        overflow: hidden;
+    }
+
+    .sidebar-header {
+        padding: 10px;
+    }
+
+    .menu-item {
+        padding: 15px;
+        justify-content: center;
+    }
+
+    .menu-item span {
+        display: none;
+    }
+
+    .menu-item i {
+        margin: 0;
+        font-size: 24px;
+    }
+
+    .main-content {
+        margin-left: 70px;
+    }
+}
+
+@media (max-width: 768px) {
+    .security-form-container {
+        width: 90%;
+    }
+
+    .dashboard-content {
+        flex-direction: column;
+    }
+
+    .sensor-card {
+        min-width: 100%;
+    }
+}
+
+/* Hidden Content for Tab Navigation */
+#dashboard-view,
+#water-quality-view,
+#settings-view {
+    display: none;
+}
+
+#dashboard-view.active,
+#water-quality-view.active,
+#settings-view.active {
+    display: block;
+}
+
+/* This is to show only the login page initially */
+.dashboard-container {
+    display: none;
+}

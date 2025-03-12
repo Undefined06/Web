@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PondGuardians - Water Quality Monitoring System</title>
+    <link rel="stylesheet" href="styles.css">
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<!-- Login/Signup Page -->
+<div class="security-container">
+    <div class="security-form-container">
+        <div class="security-logo">
+            <h1 style="color: var(--primary-color);">PondGuardians</h1>
+            <p>Water Quality Monitoring System</p>
+        </div>
+
+        <div class="security-tabs">
+            <div class="security-tab active" onclick="switchSecurityTab(this, 'login-form')">Sign In</div>
+            <div class="security-tab" onclick="switchSecurityTab(this, 'signup-form')">Sign Up</div>
+        </div>
+
+        <div id="login-form" class="security-form active">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" class="form-control" placeholder="Enter your email">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" class="form-control" placeholder="Enter your password">
+            </div>
+
+            <button class="btn" onclick="login()">Sign In</button>
+
+            <div class="security-footer">
+                <p>Forgot your password? <a href="#">Reset it here</a></p>
+            </div>
+        </div>
+
+        <div id="signup-form" class="security-form" style="display: none;">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" class="form-control" placeholder="Enter your full name">
+            </div>
+
+            <div class="form-group">
+                <label for="signup-email">Email</label>
+                <input type="email" id="signup-email" class="form-control" placeholder="Enter your email">
+            </div>
+
+            <div class="form-group">
+                <label for="signup-password">Password</label>
+                <input type="password" id="signup-password" class="form-control" placeholder="Create a password">
+            </div>
+
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" class="form-control" placeholder="Confirm your password">
+            </div>
+
+            <button class="btn" style="background-color: var(--secondary-color);">Sign Up</button>
+        </div>
+    </div>
+</div>
+
+<!-- Dashboard Layout -->
+<div class="dashboard-container">
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2 style="color: var(--primary-color);">PondGuardians</h2>
+        </div>
+
+        <div class="sidebar-menu">
+            <a href="#" class="menu-item active" onclick="showTab('dashboard-view')">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="#" class="menu-item" onclick="showTab('water-quality-view')">
+                <i class="fas fa-water"></i>
+                <span>Water Quality Data</span>
+            </a>
+            <a href="#" class="menu-item" onclick="showTab('settings-view')">
+                <i class="fas fa-cog"></i>
+                <span>Settings</span>
+            </a>
+            <a href="#" class="menu-item" onclick="logout()">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="dashboard-header">
+            <div class="dashboard-title">Water Quality Dashboard</div>
+            <div class="user-info">
+                <div class="user-avatar">JD</div>
+                <div class="user-name">John Doe</div>
+            </div>
+        </div>
+
+        <!-- Dashboard View -->
+        <div id="dashboard-view" class="active">
+            <div class="dashboard-content">
+                <!-- EC Sensor Card -->
+                <div class="card sensor-card">
+                    <div class="sensor-card-header">
+                        <div class="sensor-title">Electrical Conductivity</div>
+                        <div class="sensor-icon ec-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                    </div>
+                    <div class="sensor-value">520 <span class="sensor-unit">μS/cm</span></div>
+                    <div class="sensor-status status-normal">Normal</div>
+                </div>
+
+                <!-- TDS Sensor Card -->
+                <div class="card sensor-card">
+                    <div class="sensor-card-header">
+                        <div class="sensor-title">Total Dissolved Solids</div>
+                        <div class="sensor-icon tds-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                    </div>
+                    <div class="sensor-value">260 <span class="sensor-unit">ppm</span></div>
+                    <div class="sensor-status status-normal">Normal</div>
+                </div>
+
+                <!-- Temperature Sensor Card -->
+                <div class="card sensor-card">
+                    <div class="sensor-card-header">
+                        <div class="sensor-title">Temperature</div>
+                        <div class="sensor-icon temp-icon">
+                            <i class="fas fa-thermometer-half"></i>
+                        </div>
+                    </div>
+                    <div class="sensor-value">26.5 <span class="sensor-unit">°C</span></div>
+                    <div class="sensor-status status-warning">Slightly High</div>
+                </div>
+
+                <!-- pH Sensor Card -->
+                <div class="card sensor-card">
+                    <div class="sensor-card-header">
+                        <div class="sensor-title">pH Level</div>
+                        <div class="sensor-icon ph-icon">
+                            <i class="fas fa-vial"></i>
+                        </div>
+                    </div>
+                    <div class="sensor-value">7.2</div>
+                    <div class="sensor-status status-normal">Normal</div>
+                </div>
+
+                <!-- Chart Card -->
+                <div class="card chart-card">
+                    <div class="sensor-card-header">
+                        <div class="sensor-title">Real-time Monitoring</div>
+                    </div>
+                    <div class="chart-container">
+                        <p>Real-time chart will be displayed here</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Water Quality Data View -->
+        <div id="water-quality-view">
+            <div class="tabs">
+                <div class="tab active">Real-time Data</div>
+                <div class="tab">Historical Data</div>
+            </div>
+
+            <div class="card chart-card">
+                <div class="sensor-card-header">
+                    <div class="sensor-title">Water Quality Trends</div>
+                </div>
+                <div class="chart-container">
+                    <p>Water quality trends chart will be displayed here</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="sensor-card-header">
+                    <div class="sensor-title">Historical Data</div>
+                </div>
+
+                <div class="history-filters">
+                    <div class="filter-item">
+                        <select class="filter-select">
+                            <option>Select Parameter</option>
+                            <option>EC</option>
+                            <option>TDS</option>
+                            <option>Temperature</option>
+                            <option>pH</option>
+                        </select>
+                    </div>
+                    <div class="filter-item">
+                        <select class="filter-select">
+                            <option>Last 24 Hours</option>
+                            <option>Last 7 Days</option>
+                            <option>Last 30 Days</option>
+                            <option>Custom Range</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date & Time</th>
+                                <th>EC (μS/cm)</th>
+                                <th>TDS (ppm)</th>
+                                <th>Temp (°C)</th>
+                                <th>pH</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2025-03-12 10:30:00</td>
+                                <td>520</td>
+                                <td>260</td>
+                                <td>26.5</td>
+                                <td>7.2</td>
+                                <td><span class="sensor-status status-normal">Normal</span></td>
+                            </tr>
+                            <tr>
+                                <td>2025-03-12 09:30:00</td>
+                                <td>518</td>
+                                <td>259</td>
+                                <td>26.4</td>
+                                <td>7.3</td>
+                                <td><span class="sensor-status status-normal">Normal</span></td>
+                            </tr>
+                            <tr>
+                                <td>2025-03-12 08:30:00</td>
+                                <td>525</td>
+                                <td>262</td>
+                                <td>26.8</td>
+                                <td>7.1</td>
+                                <td><span class="sensor-status status-warning">Slightly High</span></td>
+                            </tr>
+                            <tr>
+                                <td>2025-03-12 07:30:00</td>
+                                <td>530</td>
+                                <td>265</td>
+                                <td>27.0</td>
+                                <td>7.0</td>
+                                <td><span class="sensor-status status-warning">Slightly High</span></td>
+                            </tr>
+                            <tr>
+                                <td>2025-03-12 06:30:00</td>
+                                <td>515</td>
+                                <td>257</td>
+                                <td>26.2</td>
+                                <td>7.3</td>
+                                <td><span class="sensor-status status-normal">Normal</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Settings View -->
+        <div id="settings-view">
+            <div class="card settings-card">
+                <div class="sensor-card-header">
+                    <div class="sensor-title">Export Data</div>
+                </div>
+
+                <div class="date-range">
+                    <h3>Select Date Range</h3>
+                    <div class="date-inputs">
+                        <div class="date-input">
+                            <label for="start-date">Start Date</label>
+                            <input type="date" id="start-date" class="form-control">
+                        </div>
+                        <div class="date-input">
+                            <label for="end-date">End Date</label>
+                            <input type="date" id="end-date" class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="export-options">
+                    <div class="export-option">
+                        <div class="export-icon export-pdf">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="export-info">
+                            <div class="export-title">Export as PDF</div>
+                            <div class="export-desc">Get a formatted document with data tables and charts</div>
+                        </div>
+                    </div>
+                    <div class="export-option">
+                        <div class="export-icon export-excel">
+                            <i class="fas fa-file-excel"></i>
+                        </div>
+                        <div class="export-info">
+                            <div class="export-title">Export as Excel</div>
+                            <div class="export-desc">Get raw data in spreadsheet format for analysis</div>
+                        </div>
+                    </div>
+                    <div class="export-option">
+                        <div class="export-icon export-access">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="export-info">
+                            <div class="export-title">Export to MS Access</div>
+                            <div class="export-desc">Export data to Microsoft Access format</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>
